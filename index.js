@@ -1,6 +1,4 @@
 
-
-
 const dataURLtoFile = (dataurl) => {
   if (!dataurl) {
     return;
@@ -18,19 +16,19 @@ const dataURLtoFile = (dataurl) => {
   return new File([u8arr], "image.jpg", { type: mime });
 };
 
-module.exports =  async function shareOnMobile  ({ text, url, title, imgBase64 }){
-    if (navigator.share === undefined) {
-      return;
-    }
-    var file = dataURLtoFile(imgBase64);
-    try {
-      await navigator.share({
-        text,
-        url,
-        title,
-        files: [file]
-      });
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+exports.shareOnMobile = async function ({ text, url, title, imgBase64 }) {
+  if (navigator.share === undefined) {
+    return;
+  }
+  var file = dataURLtoFile(imgBase64);
+  try {
+    await navigator.share({
+      text,
+      url,
+      title,
+      files: [file]
+    });
+  } catch (error) {
+    console.log("error", error);
+  }
+};
