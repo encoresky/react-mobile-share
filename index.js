@@ -18,6 +18,7 @@ const dataURLtoFile = (dataurl) => {
 
 exports.shareOnMobile = async function ({ text, url, title, imgBase64 }) {
   if (navigator.share === undefined) {
+    console.error("error: navigator.share is not available");
     return;
   }
   var file = dataURLtoFile(imgBase64);
@@ -29,6 +30,6 @@ exports.shareOnMobile = async function ({ text, url, title, imgBase64 }) {
       files: [file]
     });
   } catch (error) {
-    console.log("error", error);
+    console.error("error: ", error);
   }
 };
