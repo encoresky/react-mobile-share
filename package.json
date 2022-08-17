@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rkencoresky/react-mobile-share.git"
+    "url": "git+https://github.com/encoresky/react-mobile-share.git"
   },
   "keywords": [
     "react-share"
@@ -16,7 +16,7 @@
   "author": "encoresky",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rkencoresky/react-mobile-share/issues"
+    "url": "https://github.com/encoresky/react-mobile-share/issues"
   },
-  "homepage": "https://github.com/rkencoresky/react-mobile-share#readme"
+  "homepage": "https://github.com/encoresky/react-mobile-share#readme"
 }
