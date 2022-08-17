@@ -16,7 +16,7 @@ const dataURLtoFile = (dataurl) => {
   return new File([u8arr], "image.jpg", { type: mime });
 };
 
-exports.shareOnMobile = async function ({ url, title, image }) {
+exports.shareOnMobile = function ({ url, title, image }) {
   if (navigator.share === undefined) {
     console.error("error: navigator.share is not available");
     return;
@@ -40,7 +40,12 @@ exports.shareOnMobile = async function ({ url, title, image }) {
     }
   }
   try {
-    await navigator.share(shareData);
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      navigator.share(shareData)
+        .then(() => console.info('Share was successful.'))
+        .catch((error) => console.error('Sharing failed', error));
+    }
+
   } catch (error) {
     console.error("error: ", error);
   }
