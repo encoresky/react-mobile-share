@@ -11,7 +11,14 @@
     "url": "git+https://github.com/encoresky/react-mobile-share.git"
   },
   "keywords": [
-    "react-share"
+    "react-share",
+    "react-mobile-share",
+    "react-social-share",
+    "react-android-share",
+    "react-ios-share",
+    "react-android-ios-share",
+    "react-web-share",
+    "react-web-mobile-share"
   ],
   "author": "encoresky",
   "license": "ISC",
