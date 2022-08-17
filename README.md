@@ -1,5 +1,3 @@
-# README.md
-
 # React-Mobile-Share
 
 Provides an easy and simple way to share data (such as text, url and media) via mobile’s build-in share module.
