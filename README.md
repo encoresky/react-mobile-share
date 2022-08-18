@@ -1,6 +1,12 @@
 # React-Mobile-Share
 
 Provides an easy and simple way to share data (such as text, url and media) via mobile’s build-in share module.
+It is based on [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share).
+
+## Features
+- Lightweight
+- Share text, url and image.
+- Works on Android and iOS
 
 ## 🔧 Installation
 
@@ -38,7 +44,7 @@ const App = () =>{
           })
         }
       >
-        Share{" "}
+        Share
       </button>
     </div>
   );
