@@ -15,6 +15,9 @@ npm i react-mobile-share    # npm
 yarn add react-mobile-share # yarn
 ```
 
+## Demo
+[Try on CodeSandbox](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
+
 ## Preview
 
 ### Mobile
