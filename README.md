@@ -18,18 +18,11 @@ yarn add react-mobile-share # yarn
 ```
 
 ## Demo
-[Try on CodeSandbox](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
+[Try with CodeSandbox](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
 
 ## Preview
 ![Android](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-android-share.png)
 ![iOS](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-ios-share.png)
-
-
-### Mobile
-
-![1660745435905.JPEG](README%20md%206a99d203d22b4251a55f21e69d585cc2/1660745435905.jpeg)
-
-Mobile Preview
 
 ## 📦 Usage
 
