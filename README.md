@@ -3,6 +3,8 @@
 Provides an easy and simple way to share data (such as text, url and media) via mobile’s build-in share module.
 It is based on [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share).
 
+This works only with secure contexts (HTTPS).
+
 ## Features
 - Lightweight
 - Share text, url and image.
