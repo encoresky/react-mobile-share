@@ -26,10 +26,7 @@ exports.shareOnMobile = function ({ url, title, image }) {
     return;
   }
 
-  var shareData = { text: "" };
-  if (title) {
-    shareData.title = title;
-  }
+  var shareData = { text: title, title };
   if (url) {
     shareData.url = url;
   }
