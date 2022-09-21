@@ -5,7 +5,7 @@ It is based on [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/
 
 This works only with secure contexts (HTTPS).
 
-## Features
+## 💡 Features
 - Lightweight
 - Share text, url and image.
 - Works on Android and iOS
@@ -17,10 +17,10 @@ npm i react-mobile-share    # npm
 yarn add react-mobile-share # yarn
 ```
 
-## Demo
+## 🖥️ Demo
 [Try with CodeSandbox](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
 
-## Preview
+## 📱 Preview
 ![Android](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-android-share.png)&nbsp;&nbsp;&nbsp;
 ![iOS](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-ios-share.png)
 
