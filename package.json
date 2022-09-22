@@ -24,7 +24,7 @@
     "react-web-mobile-share"
   ],
   "author": "encoresky",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/encoresky/react-mobile-share/issues"
   },
