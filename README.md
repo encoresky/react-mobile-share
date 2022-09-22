@@ -18,8 +18,7 @@ yarn add react-mobile-share # yarn
 ```
 
 ## 🖥️ Demo
-[Try with CodeSandbox](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
-[![Edit ReactTooltip](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark)
+[![Try with CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)]([https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js))
 
 ## 📱 Preview
 ![Android](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-android-share.png)&nbsp;&nbsp;&nbsp;
