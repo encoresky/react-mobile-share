@@ -54,10 +54,50 @@ const App = () =>{
 export default App;
 ```
 
-## 👀 Props
+## 👀 API References
 
+#### Functions
 
+```
+  shareOnMobile(data, fallbackFn)
+```
+
+Takes the following parameters:
+
+| Parameter    | Type       | Description                   |
+| :----------- | :--------- | :---------------------------- |
+| `data`       | `object`   | **Required**                  |
+| `fallbackFn` | `function` | **Options**: return a message |
+
+#### Data Object (1st Parameter)
+
+```
+{
+    text: <string>,
+    url: "https://www.npmjs.com/package/react-mobile-share",
+    title: "React-Mobile-Share",
+    image: imgBase64,
+}
+```
+
+Object must contains the following fields:
+| Field | Type | Description |
+| :-------- | :------- | :-------------------------------- |
+| `title` | `string` | **Required**. Must have a title.|
+| `text` | `string` | **Optional**. Add a description. |
+| `url` | `string` | **Optional**. Any valid url. |
+| `image` | `string` | **Optional**. Should be valid base64 string. |
+
+#### Fallback Function (2nd Parameter)
+
+```
+function(message) {
+    console.log("fallback", message)
+}
+```
+
+This will invoked when any failure occures.
 
 ## 📜 License
 
-MIT © encoresky
+[MIT](https://github.com/encoresky/react-mobile-share/blob/main/LICENSE)
