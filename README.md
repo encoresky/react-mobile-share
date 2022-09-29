@@ -6,6 +6,7 @@ It is based on [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/
 This works only with secure contexts (HTTPS).
 
 ## 💡 Features
+
 - Lightweight
 - Share text, url and image.
 - Works on Android and iOS
@@ -18,9 +19,11 @@ yarn add react-mobile-share # yarn
 ```
 
 ## 🖥️ Demo
+
 [![Try with CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
 
 ## 📱 Preview
+
 ![Android](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-android-share.png)&nbsp;&nbsp;&nbsp;
 ![iOS](https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-ios-share.png)
 
@@ -28,11 +31,11 @@ yarn add react-mobile-share # yarn
 
 ```tsx
 import React from "react";
-import { shareOnMobile } from 'react-mobile-share';
+import { shareOnMobile } from "react-mobile-share";
 
-const imgBase64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2..."
+const imgBase64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2...";
 
-const App = () =>{
+const App = () => {
   return (
     <div>
       <button
@@ -41,7 +44,7 @@ const App = () =>{
             text: "Hey checkout our package react-mobile-share",
             url: "https://www.npmjs.com/package/react-mobile-share",
             title: "React-Mobile-Share",
-            image : imgBase64,	
+            image: imgBase64,
           })
         }
       >
@@ -49,7 +52,7 @@ const App = () =>{
       </button>
     </div>
   );
-}
+};
 
 export default App;
 ```
