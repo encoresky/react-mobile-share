@@ -48,9 +48,7 @@ exports.shareOnMobile = (params, fallback) => {
           console.error('Sharing failed', error);
         });
     }
-
   } catch (error) {
-    fallback?.(error.message)
     console.error("error: ", error);
   }
 };
