@@ -8,7 +8,7 @@ This works only with secure contexts (HTTPS).
 ## 💡 Features
 
 - Lightweight
-- Share text, url and image.
+- Share text, url and images
 - Works on Android and iOS
 
 ## 🔧 Installation
@@ -44,7 +44,7 @@ const App = () => {
             text: "Hey checkout our package react-mobile-share",
             url: "https://www.npmjs.com/package/react-mobile-share",
             title: "React-Mobile-Share",
-            image: imgBase64,
+            images: [imgBase64],
           })
         }
       >
@@ -79,7 +79,7 @@ Takes the following parameters:
     text: <string>,
     url: "https://www.npmjs.com/package/react-mobile-share",
     title: "React-Mobile-Share",
-    image: imgBase64,
+    images: [imgBase64],
 }
 ```
 
@@ -89,7 +89,7 @@ Object must contains the following fields:
 | `title` | `string` | **Required**. Must have a title.|
 | `text` | `string` | **Optional**. Add a description. |
 | `url` | `string` | **Optional**. Any valid url. |
-| `image` | `string` | **Optional**. Should be valid base64 string. |
+| `images` | `array` | **Optional**. Should be a valid array of base64 strings. |
 
 #### Fallback Function (2nd Parameter)
 
