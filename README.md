@@ -20,7 +20,7 @@ yarn add react-mobile-share # yarn
 
 ## 🖥️ Demo
 
-[![Try with CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
+[![Try with CodeSandbox](https://img.shields.io/badge/Edit%20with%20CodeSandBox-000000?style=for-the-badge&logo=codesandbox&logoColor=white)](https://codesandbox.io/s/react-mobile-share-example-r11kjs?file=/src/App.js)
 
 ## 📱 Preview
 
