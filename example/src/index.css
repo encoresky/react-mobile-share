@@ -56,6 +56,20 @@ body {
   color: #c0c0d0;
 }
 
+.share-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #8888a0;
+  line-height: 1.4;
+}
+
+.share-hint code {
+  font-size: 0.75em;
+  padding: 0.1em 0.35em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
 .share-btn {
   display: inline-flex;
   align-items: center;

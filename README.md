@@ -100,6 +100,29 @@ function(message) {
 
 This will invoked when any failure occurs.
 
+## ⚠️ Image sharing and apps like Slack/Skype
+
+When you share **images as base64** (via the `images` array), the Web Share API sends them as **files**. Whether the image is received depends on the **share target** (the app you pick, e.g. Slack, Skype, Mail, Messages):
+
+- **Many desktop/web apps (e.g. Slack, Skype)** only accept **title, text, and URL** from the share. They often **do not** receive or show the shared **files**. So the image may not appear when you share to those apps.
+- **Native mobile apps** (e.g. Mail, Messages, some social apps) are more likely to accept and show shared files.
+
+**Workaround so the image appears in Slack/Skype:**  
+Host the image on your server or a CDN and share its **URL** instead of base64. Put the image URL in `url` (or in `text`). Those apps will then show a preview/link for that URL.
+
+```tsx
+// ✅ For Slack/Skype: share an image URL so they can show a preview
+shareOnMobile({
+  title: "React Mobile Share",
+  text: "Check out this image",
+  url: "https://yourserver.com/path/to/image.png",  // public URL to the image
+});
+```
+
+If you must use base64 (e.g. image is only in memory), you can first upload it to your backend or a service (e.g. imgur, your API), get back a URL, then share that URL with `shareOnMobile`.
+
+On **Safari/iOS**, sharing **files together with** title/text/url is often not supported. The library will fall back to sharing **only the image file** when the full payload is not shareable, so the image may still reach the share sheet; some apps will then receive only the file (no title/text/url).
+
 ## 📜 License
 
 [MIT](https://github.com/encoresky/react-mobile-share/blob/main/LICENSE)

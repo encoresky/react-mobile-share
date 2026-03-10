@@ -8,19 +8,30 @@ const sampleImageBase64 =
 export default function App() {
   const [message, setMessage] = useState<string | null>(null);
 
-  const handleShare = (withImage: boolean) => {
+  const handleShare = (mode: "link" | "base64" | "imageUrl") => {
     setMessage(null);
+
+    if (mode === "imageUrl") {
+      // For Slack/Skype: share a public image URL so they can show a preview
+      shareOnMobile(
+        {
+          title: "React Mobile Share",
+          text: "Check out react-mobile-share – easy native sharing.",
+          url: "https://raw.githubusercontent.com/encoresky/react-mobile-share/main/sample-android-share.png",
+        },
+        (msg) => setMessage(msg)
+      );
+      return;
+    }
 
     shareOnMobile(
       {
         title: "React Mobile Share",
         text: "Check out react-mobile-share – easy native sharing on Android & iOS.",
         url: "https://www.npmjs.com/package/react-mobile-share",
-        ...(withImage ? { images: [sampleImageBase64] } : {}),
+        ...(mode === "base64" ? { images: [sampleImageBase64] } : {}),
       },
-      (msg) => {
-        setMessage(msg);
-      }
+      (msg) => setMessage(msg)
     );
   };
 
@@ -37,20 +48,39 @@ export default function App() {
         <button
           type="button"
           className="share-btn"
-          onClick={() => handleShare(false)}
+          onClick={() => handleShare("link")}
         >
           Share link
         </button>
       </section>
 
       <section className="share-section">
-        <h2>Share with image</h2>
+        <h2>Share with image (base64)</h2>
         <button
           type="button"
           className="share-btn"
-          onClick={() => handleShare(true)}
+          onClick={() => handleShare("base64")}
         >
           Share with image
+        </button>
+        <p className="share-hint">
+          Apps like Slack or Skype often only receive title/text/URL, not the
+          image file. For those apps, share an image <em>URL</em> instead.
+        </p>
+      </section>
+
+      <section className="share-section">
+        <h2>Share with image URL (best for Slack/Skype)</h2>
+        <p className="share-hint">
+          In your app: host the image and pass its URL in <code>url</code> or{" "}
+          <code>text</code>. Slack/Skype will show a preview of the link.
+        </p>
+        <button
+          type="button"
+          className="share-btn"
+          onClick={() => handleShare("imageUrl")}
+        >
+          Share with image URL
         </button>
       </section>
 

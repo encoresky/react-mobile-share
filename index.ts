@@ -14,12 +14,23 @@
  * }
  * ```
  */
+const mimeToExt: Record<string, string> = {
+  "image/jpeg": "jpg",
+  "image/jpg": "jpg",
+  "image/png": "png",
+  "image/gif": "gif",
+  "image/webp": "webp",
+  "image/svg+xml": "svg",
+}
+
 const dataURLtoFile = (dataurl: string) => {
   if (!dataurl) {
     return
   }
   const arr = dataurl.split(",")
-  const mime = arr[0].match(/:(.*?);/)![1]
+  const mimeMatch = arr[0].match(/:(.*?);/)
+  if (!mimeMatch) return
+  const mime = mimeMatch[1]
   const bstr = atob(arr[1])
   let n = bstr.length
   const u8arr = new Uint8Array(n)
@@ -28,7 +39,8 @@ const dataURLtoFile = (dataurl: string) => {
     u8arr[n] = bstr.charCodeAt(n)
   }
 
-  return new File([u8arr], "image.jpg", { type: mime })
+  const ext = mimeToExt[mime] ?? "jpg"
+  return new File([u8arr], `image.${ext}`, { type: mime })
 }
 
 /**
@@ -126,13 +138,17 @@ const shareOnMobile = (
     shareData.url = url
   }
   if (Array.isArray(images)) {
-    const files = images.map(image => dataURLtoFile(image)!)
-    if (files) {
+    const files = images
+      .map(image => dataURLtoFile(image))
+      .filter((f): f is File => f != null)
+    if (files.length > 0) {
       shareData.files = files
     }
   }
   try {
-    if (navigator.canShare && navigator.canShare(shareData)) {
+    const canShareFull =
+      navigator.canShare && navigator.canShare(shareData)
+    if (canShareFull) {
       navigator
         .share(shareData)
         .then(() => console.info("Shared successful."))
@@ -140,6 +156,24 @@ const shareOnMobile = (
           fallbackFunction?.(error.message)
           console.error("Sharing failed ..", error)
         })
+      return
+    }
+    // On Safari/iOS, sharing files together with title/text/url often fails or
+    // drops files. Try sharing only files so the image reaches the app.
+    if (shareData.files?.length && navigator.canShare?.({ files: shareData.files })) {
+      navigator
+        .share({ files: shareData.files })
+        .then(() => console.info("Shared successful (files only)."))
+        .catch(error => {
+          fallbackFunction?.(error.message)
+          console.error("Sharing failed ..", error)
+        })
+      return
+    }
+    if (!canShareFull) {
+      fallbackFunction?.(
+        "This browser or share target may not support sharing with files. For apps like Slack/Skype, share an image URL instead of a base64 image."
+      )
     }
   } catch (error) {
     if (error instanceof Error) {
