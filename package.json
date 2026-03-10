@@ -24,7 +24,11 @@
   ],
   "scripts": {
     "build": "tsup",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "example": "npm run build && npm run dev --prefix example",
+    "example:dev": "npm run dev --prefix example",
+    "example:build": "npm run build --prefix example",
+    "example:preview": "npm run preview --prefix example"
   },
   "repository": {
     "type": "git",
@@ -48,7 +52,7 @@
   "homepage": "https://github.com/encoresky/react-mobile-share#readme",
   "devDependencies": {
     "rimraf": "^6.0.1",
-    "tsup": "^8.2.3",
+    "tsup": "^8.5.1",
     "typescript": "^5.5.4"
   }
 }
